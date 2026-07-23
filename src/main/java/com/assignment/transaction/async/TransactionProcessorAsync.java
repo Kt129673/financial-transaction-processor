@@ -221,7 +221,7 @@ public class TransactionProcessorAsync {
                 return true;
             });
         } catch (Exception e) {
-            log.error("Error processing transaction in batch {}: {}", batchId, e.getMessage());
+            log.error("Error processing transaction in batch {}: {}", batchId, e.getMessage(), e);
             persistFailedTransaction(dto, batchId, "Processing error: " + e.getMessage());
             return false;
         }
